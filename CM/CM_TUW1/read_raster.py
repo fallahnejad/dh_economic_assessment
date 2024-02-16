@@ -1,9 +1,7 @@
 from osgeo import gdal
 
 
-def raster_array(
-    raster, dType=float, xOff=None, yOff=None, cols=None, rows=None, return_gt=None
-):
+def raster_array(raster, dType=float, xOff=None, yOff=None, cols=None, rows=None, return_gt=None):
     ds = gdal.Open(raster)
     if not ds:
         raise Exception(" unable to load a raster")
@@ -26,3 +24,4 @@ def raster_array(
         return arr, tuple(gt)
     else:
         return arr
+
